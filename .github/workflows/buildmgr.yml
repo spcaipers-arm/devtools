@@ -316,7 +316,7 @@ jobs:
           submodules: true
 
       - name: Setup ARM GCC for Ubuntu and macOS
-        if: ${{ startsWith(matrix.runs_on, 'macos') || ( startsWith(matrix.runs_on, 'ubuntu') && matrix.arch == 'amd64' ) }}
+        if: ${{ startsWith(matrix.runs_on, 'macos') || startsWith(matrix.runs_on, 'ubuntu') }}
         env:
           installer_name: ${{ matrix.installer_name }}
         run: |
@@ -392,7 +392,7 @@ jobs:
           arch: ${{ matrix.arch }}
 
       - name: Run Cbuild Integration Tests (excl. AC5, AC6, MultiTargetAC6Tests) for Linux amd64
-        if: ${{ startsWith(matrix.runs_on, 'ubuntu') && matrix.arch == 'amd64' }}
+        if: ${{ startsWith(matrix.runs_on, 'ubuntu') }}
         env:
           target: ${{ matrix.target }}
         run: ./tools/buildmgr/test/integrationtests/${target}/Debug/CbuildIntegTests --gtest_filter=-*AC5*:*AC6*:*MultiTargetAC6Tests* --gtest_output=xml:integtest_report_${target}.xml
