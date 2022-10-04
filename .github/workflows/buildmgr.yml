@@ -436,7 +436,7 @@ jobs:
         arm_gcc_install_base: https://developer.arm.com/-/media/Files/downloads/gnu/11.2-2022.02/binrel
         CI_PACK_ROOT: ${{ github.workspace }}/packs
         CI_GCC_TOOLCHAIN_ROOT: ${{ github.workspace }}/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 15
     strategy:
       fail-fast: true
