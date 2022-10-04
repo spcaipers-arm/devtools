@@ -447,8 +447,11 @@ jobs:
           sudo apt-get install \
             bc \
             build-essential \
-            ninja-build \
-            lcov
+            ninja-build
+            
+      - name: Check lcov
+        run: |
+          lcov --version
 
       - name: Checkout devtools
         uses: actions/checkout@v2
