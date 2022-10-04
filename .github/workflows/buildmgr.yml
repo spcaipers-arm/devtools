@@ -447,7 +447,8 @@ jobs:
           sudo apt-get install \
             bc \
             build-essential \
-            ninja-build
+            ninja-build \
+            lcov
             
       - name: Check lcov
         run: |
