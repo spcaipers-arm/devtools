@@ -6,7 +6,7 @@
         "runOn": "publicRepo"
     },
     {
-        "runs_on":"ubuntu-22.04",
+        "runs_on":"linux-eks",
         "target":"linux64",
         "arch": "amd64",
         "runOn": "always"
